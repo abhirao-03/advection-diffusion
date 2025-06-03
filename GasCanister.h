@@ -3,10 +3,10 @@
 
 class GasCanister {
     private:
-    double x_loc;
-    double y_loc;
-    double concentration_val;
-    double radius;
+        double x_loc;
+        double y_loc;
+        double concentration_val;
+        double radius;
 
     public:
         GasCanister() : x_loc(0.0), y_loc(0.0), concentration_val(0.0), radius(0.0) {}

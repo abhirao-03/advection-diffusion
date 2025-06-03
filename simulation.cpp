@@ -9,7 +9,9 @@ void Simulation::initialize_concentration_field(){
         double gc_x = current_canister.get_x_loc();
         double gc_y = current_canister.get_y_loc();
         double gc_conc = current_canister.get_concentration();
+        double radius = current_canister.get_radius();
 
+        
         
     }
 }

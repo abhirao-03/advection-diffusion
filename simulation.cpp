@@ -22,9 +22,18 @@ void Simulation::initialize_concentration_field(){
         int iy_low  = static_cast<int>((gc_y - gc_rad) / dy);
         int iy_high = static_cast<int>((gc_y + gc_rad) / dy);
 
-        for (int iy_cell=std::max(0, iy_low); iy_cell <= std::min(Ny - 1, iy_high); ++iy_cell) {
-            for (int ix_cell=std::max(0, ix_low); ix_cell <= std::min(Nx - 1, ix_high); ++ix_cell){
+        for (int iy_cell = std::max(0, iy_low); iy_cell <= std::min(Ny - 1, iy_high); ++iy_cell) {
+            for (int ix_cell = std::max(0, ix_low); ix_cell <= std::min(Nx - 1, ix_high); ++ix_cell){
+                double cell_center_x = (ix_cell + 0.5) * dx;
+                double cell_center_y = (iy_cell + 0.5) * dy;
                 
+                double delta_x = cell_center_x - gc_x;
+                double delta_y = cell_center_y - gc_y;
+                double dist_sq = delta_x * delta_x + delta_y * delta_y;
+
+                if (dist_sq <= (gc_rad*gc_rad)) {
+                    concentration_grid[iy_cell][ix_cell] = gc_conc;
+                }
             }
         }
     }

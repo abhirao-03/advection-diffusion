@@ -16,8 +16,10 @@ class Simulation{
             params(initial_params),
             concentration_grid(initial_params.get_y_steps(), std::vector<double>(initial_params.get_x_steps(), 0.0))
             {};
+            
         void initialize_concentration_field();
         void add_canister(const GasCanister& canister);
+        const std::vector<std::vector<double>>& get_concentration_grid() const {return concentration_grid;}
 };
 
 #endif

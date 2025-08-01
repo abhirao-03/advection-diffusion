@@ -38,3 +38,19 @@ void Simulation::initialize_concentration_field(){
         }
     }
 }
+
+void Simulation::perform_time_step(){
+    int Nx = params.get_x_steps();
+    int Ny = params.get_y_steps();
+    double dx = params.get_dx();
+    double dy = params.get_dy();
+
+    std::vector<std::vector<double>> next_concentration_grid(Ny, std::vector<double>(Nx, 0.0));
+
+    for (int iy = 1; iy < Ny - 1; ++iy){
+        for (int ix = 1; ix < Nx - 1; ++ix){
+            
+        }
+    }
+    this->concentration_grid = next_concentration_grid;
+}

@@ -29,6 +29,7 @@ class Simulation{
             {};
             
         void initialize_concentration_field();
+        void perform_time_step();
         void add_canister(const GasCanister& canister);
         const std::vector<std::vector<double>>& get_concentration_grid() const {return concentration_grid;}
 };

@@ -6,24 +6,24 @@
 #include "GasCanister.h"
 
 int main() {
-    int num_points_x = 10;
-    int num_points_y = 10;
+    int num_points_x = 100;
+    int num_points_y = 100;
     double length_x = 1.0;
     double length_y = 1.0;
 
-    double dc_x = 1.0;
-    double dc_y = 1.0;
-    double av_x = 1.0;
-    double av_y = 1.0;
+    double drift_coeff_x = 1.0;
+    double drift_coeff_y = 1.0;
+    double adv_vel_x = 1.0;
+    double adv_vel_y = 1.0;
     double dt = 0.001;
 
     SimulationParams params(length_x, length_y, num_points_x, num_points_y);
 
     Simulation sim(params,
-                   dc_x,
-                   dc_y,
-                   av_x,
-                   av_y,
+                   drift_coeff_x,
+                   drift_coeff_y,
+                   adv_vel_x,
+                   adv_vel_y,
                    dt);
 
     GasCanister canister1(0.25, 0.25, 100.0, 0.1);
